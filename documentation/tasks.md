@@ -24,3 +24,13 @@
 2. Anhand dieses Datensatzes die Daten zu einzelnen Ausgaben in Quelldatensätzen finden
 
 ### 3. Aufbereitung
+#### 3.1 Struktur des Datensatzes:
+* Nachvollziehbares Schema für die Benennung der Spalten definieren
+* Intuitive Gruppierung einzelner Spalten
+
+#### 3.2 Umgang mit fehlenden Werten
+*
+
+#### 3.3 Datumsangaben:
+* **ISO 8601** als Standardformat
+* Verdächtige Angaben überprüfen (z.B. `01.01.1998`, wenn nur das Jahr bekannt ist)
