@@ -3,7 +3,7 @@
 ### 1. Quelldaten
 * Datengrundlage: [CSDB](https://csdb.dk/), [Demozoo](https://demozoo.org/), [Pouet](https://www.pouet.net/), 
 [Internet Archive](https://archive.org/), [ZXPress](https://zxpress.ru/).
-* Hauptdatensatz: [`mw_import_magazines.csv`](../data/mw_import_magazines.csv):
+* Hauptdatensatz: [`mw_import_magazines.csv`](../data/source_datasets/mw_import_magazines.csv):
   * `Title` Abgeleiteter Titel des Magazins
   * `Also known as` Mögliche Schreibweisen
   * `Language` Sprachen des Magazins (Angaben größtenteils nicht überprüft)
