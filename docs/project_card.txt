@@ -1,0 +1,66 @@
+Readme zur Dokumentation von Forschungsdatensätzen
+
+Ersteller*in Readme:				Shtohryn; Tomash
+
+Erstellungsdatum Readme:			2024-07-00
+______________________________
+
+Titel des Forschungsdatensatzes:	Diskettenmagazine im ostmitteleuropäischen Raum
+									Disk Magazines in the East-Central European Region
+
+
+Ort der Datenerhebung:				Würzburg, Deutschland
+
+Version:							[Versionsangabe; bei Erstveröffentlichung 1.0]
+Versionenänderungen:				[Freitext; Angabe, welche Änderungen zu einer neuen Version geführt haben; bei Erstveröffentlichung kein Eintrag]
+
+Herausgeber*in:						[Name, Vorname; Institution]
+Herausgeber*in Identifier:			[Angabe Institution per GND oder ROR]
+______________________________
+
+Ersteller*in 1 des Datensatzes:		Shtohryn; Tomash
+Ersteller*in 1 Identifier:			0009-0000-4597-603X
+Ersteller*in 1 Affiliation:			M.A.
+
+Ersteller*in 2 des Datensatzes:		[Name(n); Vorname(n)]
+Ersteller*in 2 Identifier:			[Angabe per ORCID-iD]
+Ersteller*in 2 Affiliation:			[Angabe Affiliation]
+
+Beteiligte 1:   					Körfer, Anna-Lena
+Beteiligte 1 Identifier:			0000-0002-1644-5042
+Beteiligte 1 Affiliation :			Dr.
+Beteiligte 1.Typ					ContactPerson, DataCurator
+
+Beteiligter 2:						Meiners, Ole
+Beteiligte 2 Identifier:			0000-0002-2568-2939
+Beteiligte 2 Affiliation :			M.A.
+Beteiligte 2.Typ					ContactPerson, DataCurator
+
+[*] An der Sammlung, Verarbeitung oder Erstellung von Forschungsdaten beteiligte Personen.
+______________________________
+
+Projektname:						[Angabe Forschungsprojekt deutsch]
+									[Angabe Forschungsprojekt englisch]
+									[Angabe Forschungsprojekt andere Sprache, ggf. ins Lateinische transliteriert (DIN 1460)]
+
+______________________________
+
+Abstract:							[Freitext zur Beschreibung der Forschungsdaten (z.B. Inhalt, verwendete Methodik, Entstehungskontext der Daten, 
+									Zusammenstellung und Struktur der Daten, Aufbau von Tabellen, Benennung von Spaltenbezeichnungen, verwendete Abkürzung/Kennzeichen, etc.)]
+
+									Bei mehreren Dateien zu einem Forschungsdatensatz: Beschreibung, wie diese zueinander im Verhältnis stehen,
+									z.B. dass eine Karte auf der Grundlage eines Geodaten-Pakets erstellt wurde.
+
+Schlagwörter:						Diskettenmagazin, Heimcomputersysteme, Digitales Kulturerbe, Ostmitteleuropa
+
+Methode der Datenerhebung: 			Web Scraping mit anschließender Aufbereitung und Bereinigung mittels semi-automatisierter Verfahren
+
+______________________________
+
+Dateiliste:							[Angabe und Erläuterung von Dateinamen und Ordnerstruktur]
+
+Dateiformate: 						.csv
+
+______________________________
+
+Anmerkungen: 						[Freitext, z.B. Danksagung, Forschungszusammenhang]
