@@ -1,111 +1,208 @@
 # 1. Einleitung
-<!-- hier wäre es vielleicht hilfreich, noch einmal grundlegend das Projekt zu erläutern,  also was ist der Gegenstand (was sind Diskmags, was zeichnet sie aus)? Warum sind sie interessant? Was für Daten haben wir? Woher kommen diese? Was soll damit im Rahmen des Projekts passieren (Aufbereitung, Bereinigung etc, also welche Schritte und welche Zielformate: - Einpflegen in Euren Katalog, - Publikation als Forschundatensatz,  - Ausloten, ob die Daten in Bibliothekskataloge aufgenommen werden können bzw. Mapping der bestehenden Metadaten auf die Anforderungen von Bibliotheken bzw. von RDA). Die Informationen müssen nicht alle hier in die Einleitung, aber einen Überblick als Einstieg bräuchte es, denke ich. Vielleicht macht es auch mehr Sinn, die project_card.txt in die project_documentation.md zu integrieren? Sonst wird es möglicherweise redundante Informationen geben.-->
-# 2. Ziele
 
-## 2.1 Datengrundlage eingrenzen:  <!-- von was? Also was ist die Grundgesamtheit? und warum, also warum muss sie die Datengrundlage eingegrenzt werden und warum die Beschränkung auf diese Regionen und Sprachen?
-* Region: Ostmitteleuropa
-  * Polen
-  * Slowakei
-  * Tschechische Republik
-  * Ungarn
-* Sprachen:
-  * Polnisch
-  * Slowakisch
-  * Tschechisch
-  * Ungarisch
+<!-- hier wäre es vielleicht hilfreich, noch einmal grundlegend das Projekt zu erläutern,  
+also was ist der Gegenstand (was sind Diskmags, was zeichnet sie aus)? Warum sind sie interessant? 
+Was für Daten haben wir? Woher kommen diese? 
+Was soll damit im Rahmen des Projekts passieren 
+(Aufbereitung, Bereinigung etc, also welche Schritte und welche Zielformate: - 
+Einpflegen in Euren Katalog, - Publikation als Forschundatensatz,  
+- Ausloten, ob die Daten in Bibliothekskataloge aufgenommen werden können bzw. 
+Mapping der bestehenden Metadaten auf die Anforderungen von Bibliotheken bzw. von RDA). 
+Die Informationen müssen nicht alle hier in die Einleitung, aber einen Überblick als Einstieg bräuchte es, denke ich. 
+Vielleicht macht es auch mehr Sinn, die project_card.txt in die project_documentation.md zu integrieren? 
+Sonst wird es möglicherweise redundante Informationen geben.-->
 
-## 2.2 Auswahl der Artefakte
-### 2.2.1 Kriterien
-* Problem: ungenaue Angaben. Was tun, wenn die Sprache des Magazins bekannt ist, aber die Herkunft nicht?
-* Wie beweist man, dass das Magazin genau dem (Sprach-)Raum zugeordnet werden kann?
-  * Stichprobenartige Überprüfung der Ausgaben anhand der Screenshots
-  * Der Titel des Magazins in entsprechender Sprache (z.B. `Paczka Tynku`)
-  * Andere Quellen (Foren, Wikipedia etc.)
-### 2.2.2 Vorgehensweise
-1. Subset aus dem Hauptdatensatz ableiten: Filtern nach Sprachen `Language` und Ländern `Origin`
-2. Anhand dieses Datensatzes die Daten zu einzelnen Ausgaben in Quelldatensätzen finden
+Diskettenmagazine, auch bekannt als *Diskmags*, sind elektronische Publikationen multimedialer Natur, deren primärer
+Zweck in der Unterhaltung und Verbreitung des Wissens rund um die ersten Heimpcomputersysteme bestand. Die ersten 
+Diskmags erschienen in frühen 1980er Jahren und waren bis hin zur ersten Dekade des 21. Jahrunderts als eine 
+alternative Form der damals üblichen Periodika besonders beliebt.<br>
+Aufgrund ihrer Bauweise waren die Disketten nicht besonders langlebig. Demzufolge griffen ihre Verfasser oder 
+Enthusiasten oft auf die Werkzeuge zur Übertragung der Inhalte von Diskmags in ein virtuelles Format, um so die
+Verfügbarkeit dieser Journale aufrechtzuerhalten. Derzeit sind die bekanntesten Reihen auf zahlreichen Ressourcen als
+digitale Abbilder zu finden. Diese lassen sich innerhalb einer dafür geeigneten Softwareumgebung emulieren.<br>
+Die Diskmags lassen sich zweifelsohne als Artefakte der damaligen digitalen Kultur betrachten. Deren Inhalte reichen von
+Artikeln rund um das Programmieren und die kreative Tätigkeit der Demoszene bis hin zu Dienstprogrammen und zahlreichen
+Spielen. Demzufolge ist ihre Erforschung ein wichtiger Schritt, um das kulturelle Erbe dieser Art erhalten 
+zu können.<br>
 
-## 2.3 Aufbereitung
-### 2.3.1 Struktur des Datensatzes:
-* Nachvollziehbares Schema für die Benennung der Spalten definieren
-* Intuitive Gruppierung einzelner Spalten
+# 2. Ziel des Projekts
 
-### 2.3.2 Umgang mit fehlenden Werten
-* `missing` oder `no value found`
+Im Rahmen eines Forschungsprojekts zur Erhaltung der Diskmags als eine Ausprägung der frühen digitalen Kultur wurde
+eine umfassende Katalogisierung aller frei verfügbaren Exemplare unternommen. Das Ergebnis ist ein wikibasierter
+[Katalog](https://diskmags.de), in dem die Metadaten zu mehr als 2000 Zeitschriften zu unterschiedlicher Thematik und für
+unterschiedliche Heimcomputersysteme zu finden sind.<br>
+Im Laufe der Datenerfassung wurde auch eine Reihe von Magazinen aus dem ostmitteleuropäischen Raum
+entdeckt. Die entsprechenden Metadaten fungieren als eine wichtige Quelle, um die Besonderheiten
+der frühen digitalen Kultur dieser Region zu erforschen.<br>
+Das Ziel dieses Projekts ist es, diese Informationen aufzubereiten und zwecks der Weiterverwendung 
+durch interessierte Forschende zu veröffentlichen. Hierbei liegt der Fokus auf allen Ländern, die
+zum ostmitteleuropäischen Raum gehören.<br>
+Damit die Qualität dieser (Forschungs-)Daten sichergestellt wird, erfolgt die Bearbeitung des Datensatzes unter der Betreuung
+von FDM-Expert:Innen vom Herder-Institut für historische Ostmitteleuropaforschung in Marburg.
+Das Ergebnis des Vorhabens sind die Datensätze im CSV-Format, die nach der Aufbereitung 
+folgendermaßen zu veröffentlichen sind:
+1. Publikation des Datensatzes im internationalen Katalog der Diskettenmagazine
+2. Veröffentlichung in einem geeigneten Repositorium
 
-### 2.3.3 Angaben zur Sprache
-* Überprüfen anhand der Informationen auf jeweiligen Ressourcen oder Screenshots von Inhalten
+# 3. Datengrundlage
 
-#### 2.3.4 Datumsangaben:
-* **ISO 8601** als Standardformat
-* Verdächtige Angaben überprüfen (z.B. `01.01.1998`, wenn nur das Jahr bekannt ist)
-* <!-- Wie gehst Du mit unvollständigen Angaben um, etwa, wenn nur das Jahr oder Jahr und Monat bekannt sind?-->
+## 3.1 Ausgaben
+Die Grundlage für die Durchführung des Projekts bilden die Datensätze, die im Laufe
+des bereits abgeschlossenen Diskmags-Projekts mittels der Web-Scraping-Methoden 
+erzeugt wurden. Diese sind im Ordner [`source_data`](../data/source_data) zu finden.<br>
+Jeder darin enthaltene Datensatz repräsentiert eine der insgesamt 5 Quellen: [CSDB](https://csdb.dk/), [Demozoo](https://demozoo.org/), [Pouet](https://www.pouet.net/), 
+[Internet Archive](https://archive.org/), [ZXPress](https://zxpress.ru/). Zur Vervollständigung
+des Datenbestands wurde zudem die Enzyklopädie der Diskettenmagazine von Claus-Dieter Volko
+(2012) berücksichtigt.
+Die Datensätze sind im CSV-Format gespeichert und enthalten folgende Informationen
+als Werte des Datentyps `string`:
+* Titel der jeweiligen Ausgabe
+* Titel des Magazins
+* Das für das Auslesen oder Beschreiben der Diskette geeignetes Heimcomputersystem
+* Die Namen der Verfasser:Innen
+* Erscheinungsdatum nach deutscher Schreibweise (`TT.MM.JJJJ`)
+* Der Link zur Ausgabe auf der jeweiligen Webressource
+* Weiterführende URLs
 
-### 2.4 Bereitstellung der Datensätze
-* `mw_import_east_middle_europe_magazines_issues.csv` - für den Diskmags-Katalog auf MediaWiki-Basis:
-  * Benennung der Felder nach zuvor definiertem Schema  <!-- Schema beschreiben? Ist ja immerhin die Dokumentation hier ;-) -->
-  * Zusammenführung der Duplikate <!-- wie geschieht das, nach welchem Schema? Wie wird entscheiden, welche Daten bei widersprüchlichen Angaben übernommen werden? -->
-* `east_middle_europe_magazines_issues.csv` - für Publikation:
-  * Benennung der Felder nach einem speziellen Schema <!-- siehe oben, wie sieht da Schema aus? -->
-  * Entsprechende Behandlung fehlender Werte <!-- die da wäre? -->
-  * wird aus vorigem Datensatz abgeleitet <!-- was wird daraus abgeleitet? welche Datenfelder? Unter welcher Bedingung? -->
+> Sofern die jeweilige Ressource über unvollständige Informationen zu einer Diskmag-Ausgabe
+verfügt, so wurde es durch einen fehlenden Wert gekennzeichnet, der bei der Betrachtung des
+Datensatzes als eine leere Zelle zu sehen ist.
 
-# 3. Beschreibung der Datensätze
+## 3.2 Magazine
 
-### 1. Quelldaten
-* Datengrundlage: [CSDB](https://csdb.dk/), [Demozoo](https://demozoo.org/), [Pouet](https://www.pouet.net/), 
-[Internet Archive](https://archive.org/), [ZXPress](https://zxpress.ru/).
-* Hauptdatensatz: [`mw_import_magazines.csv`](../data/source_datasets/mw_import_magazines.csv):
-* Datenfelder Hauptdatensatz: 
-  * `Title` Abgeleiteter Titel des Magazins <!-- hier und für die anderen Datenfelder: Datentypen angeben (String, Integer, etc.); falls Standards wie ISO z. B. für Datums- oder Sprachangaben verwendet werden, ebenfalls nennen; dto. für Normvokabulare (falls zutreffend) -->
-  * `Also known as` Mögliche Schreibweisen
-  * `Language` Sprachen des Magazins (Angaben größtenteils nicht überprüft)
-  * `Origin` Orte, wo das Magazin erschien
-  * `Start date` Erscheinungsdatum der ersten Ausgabe
-  * `End date` Erscheinungsdatum der letzten Ausgabe
-  * `Systems` Heimcomputersysteme, auf denen das Magazin verfasst wurde
-  * `Issues` Liste aller Ausgaben
-  * `Issues cleaned` Bereinigte Liste aller Ausgaben (nach zuvor definiertem Schema)
-  * `Source` Die Quellen, auf welchen das Magazin zu finden ist
-* Einzelne Quellen:
-  * Diese sind unter dem Titel `diskmags_source_name.csv` zu finden. Die Datensätze bilden die Grundlage des Hauptdatensatzes.
-  Diese befinden sich im Ordner [`data/source_datasets`](../data/source_datasets)  <!-- hier ist mir der ZUsammenhang zwischen den einzelnen Dateien nicht klar. Oben wird für die Datengrundlage auf die externen Websites vewiesen, danach wir der Hauptdatensatz erwähnt. Was ist denn hier noch mit einzelnen Quellen gemeint? Ist das mglw. redundant an dieser Stelle? Der Link führt "nur" zu dem Ordner, in dem u.a. die oben genannte Datei des Hauptdatensatzes liegt -->
+Einen Überblick über alle Magazine bietet der Datensatz 
+[`mw_import_magazines.csv`](../data/source_data/mw_import_magazines.csv). Dieser ist ebenfalls
+im CSV-Format gespeichert und hat folgende Struktur:
+* Titel des Magazins (abgeleitet aus den Titeln zugehöriger Ausgaben)
+* Alternative Titel (*AKA*)
+* Sprache des Magazins (ermittelt infolge der stichprobenartigen Recherchen)
+* Land (ermittelt infolge der stichprobenartigen Recherchen)
+* Datum der ersten Ausgabe
+* Datum der letzten Ausgabe
+* Kompatibles Heimcomputersystem
+* Liste aller Ausgaben im Rohformat
+* Bereinigte Liste aller Ausgaben ohne Duplikate
+* Quelle, wo die Ausgaben dieses Magazins zu finden sind
 
-<!-- hier fehlt noch eine entsprechende Dokumentation der issues-Datensätze, oder? -->
+> Zur Vermeidung der Probleme mit dem Auslesen und der Verarbeitung dieses Datensatzes wurde
+im Falle multipler Werte das Semikolon-Zeichen (`;`) als Separator verwendet. 
 
-# 3. Methodik
+# 4. Methodik
+## 4.1 Ableitung der Teilmenge aller Magazine aus ostmitteleuropäischem Raum
+Mithilfe der Angaben, die der Datensatz [`mw_import_magazines.csv`](../data/source_data/mw_import_magazines.csv)
+liefert, sollen alle Magazine ausgewählt, die sowohl aus dem Kerngebiet Osteuropas stammen
+als auch aus den Ländern, die zu dieser Region nur gelegentlich zählen.
+* **Schritt 1:** Auswahl der Magazine nach Land (Feld `Origin`)
+* **Schritt 2:** Sofern es keine Angaben zu Herkunftsland der Zeitschrift gibt, erfolgt
+die Auswahl nach der Sprache jedes ostmitteleuropäischen Landes. (Feld `Language`)<br>
+> Es ist zu beachten, dass diese Magazine zum Teil mehrsprachig sind.
 
-## 3.1 Zuordnung eines Magazins zu einer bestimmten Region
+Es lässt sich feststellen, dass die Suche eine Liste mit folgenden Ländern ergibt: 
+Polen, Tschechische Republik, Ungarn, Slowenien. Die Liste wird anschließend ergänzt,
+indem man die entsprechenden Sprachen einschließlich englischsprachiger Reihen
+hinzufügt. Das Ergebnis ist der Datensatz [`east_middle_europe_magazines.csv`](../data/target_data/east_middle_europe_magazines.csv),
+ der die Teilmenge dieser Magazine darstellt.<br>
 
-1. Orientierung erfolgt über die Angaben im Hauptdatensatz (Datenfeld "Origin")
-2. Angaben validieren:
-    * Recherche im Internet
-    * Herkunftsland der Gruppe (=Verfasser) <!-- werden bislang nicht genannt, etwa bei den Datenfeldern des Hauptdatensatzes; daher wäre hier anzugeben, woher diese Informationen kommen -->
+## 4.2 Erstellung des Datensatzes aller Ausgaben
+Basierend auf der Liste aller Länder und Sprachen wird ein quellenübergreifender Datensatz erstellt,
+indem alle 5 Datensätze mit Metadaten zu jeweiligen Ausgaben zusammengeführt werden. Dieser ist
+unter dem Namen [`east_middle_europe_magazines_issues.csv`](../data/target_data/east_middle_europe_magazines_issues.csv)
+zu finden und hat folgende Struktur:
 
-## 3.2 Zuordnung der sprachlichen Merkmale
-1. Orientierung erfolgt über die Angaben im Hauptdatensatz (Datenfeld "Language")
-2. Angaben validieren:
-   * Zuordnung erfolgt auf der Ebene einzelner Ausgaben  
-   * Jede Ausgabe anhand der Screenshots oder anderer Metadaten überprüfen
-3. Falls die Ausgaben desselben Magazins in unterschiedlichen Sprachen verfasst sind, so erbt das Magazin 
-all diese Merkmale.
+| Feld                       | Beschreibung                                   | Datentyp |
+|----------------------------|------------------------------------------------|----------|
+| `issue_title`              | Der "vereinheitlichte Titel" der Ausgabe       | `str`    |
+| `orig_issue_title`         | Der ursprüngliche Titel der Ausgabe            | `str`    |
+| `magazine_title`           | Der Titel des Magazins                         | `str`    |
+| `origin`                   | Das Land                                       | `str`    |
+| `language`                 | Sprache(n)                                     | `str`    |
+| `release_date`             | Erscheinungsdatum (`TT.MM.JJJJ`)               | `str`    |
+| `system_name_standardized` | Standardisierter Name des Heimcomputersystems  | `str`    |
+| `system_name`              | Ursprünglicher Name des Heimcomputers          | `str`    |
+| `editor`                   | Der Name bzw. die Namen der Herausgebergruppen | `str`    |
+| `source`                   | Die Quelle                                     | `str`    |
+| `link`                     | Der Link zur Ausgabe                           | `str`    |
+| `disclaimer`               | Anmerkung zum Inhalt des Magazins              | `str`    |
 
-## 3.3 Umgang mit Metadaten
-### 3.3.1 Für den Import ins Mediawiki:  <!-- in der TAbelle hier stehen die Datenfelder des MediaWikis? Oder muss die TAbelle noch an die Datenfelder oben angeglichen werden? (etwa bei 'Spellings' = 'Also known as'? Was ist mit den Feldern, die oben keine Entsprechung haben, etwa 'OriginalSytemName'? -->
-| Feld                 | Bedeutung                            | Werte                           | Separator |
-|----------------------|--------------------------------------|---------------------------------|-----------|
-| `Title`              | Der "bereinigte" Titel einer Ausgabe | single `string`                 |           |
-| `Spellings`          | Mögliche Schreibweisen               | multiple `string`               | `;`       |
-| `Magazine`           | Der Titel des Magazins               | single `string`                 | `;`       |
-| `Release date`       | Erscheinungsdatum                    | multiple `date` (`YYYY-MM-DD)`) | `;`       |
-| `Language`           | Sprachen                             | multiple `string`               | `;`       |
-| `Origin`             | Origin                               | multiple `string`               | `;`       |
-| `Systems`            | Systeme                              | multiple `string`               | `;`       |
-| `OriginalSystemName` | Originale Namen der Systeme          | multiple `string`               | `;`       |
-| `Groups`             | Verfasser                            | multiple `string`               | `;`       |
-| `Sources`            | Namen der Quellen                    | multiple `string`               | `;`       |
-| `Links`              | Links                                | multiple `string`               | `;`       |
 
-### 3.2 Für den Import in Bibliothekskataloge
-Es handelt sich um eine vorläufige Architektur des Datensatzes. Im Gegensatz zum Datensatz für den Import in den
-Diskmags Katalog findet hier keine Zusammenführung zusammengehöriger Ausgaben statt.
+## 4.3 Aufbereitung
+### 4.3.1 Zuteilung der vereinheitlichten Titel der Ausgabe
+Damit die Ausgabe eindeutig identifizierbar wird, ist es erforderlich, eine eindeutige
+Kennung im Feld `issue_title` zu erstellen. Dies erfolgt anhand des Titels des Magazins
+einschließlich der Nummer der jeweiligen Ausgabe mit dem Präfix *No.*.
+> Beispiel: Die erste Ausgabe des Magazins *AmigaCS*, die auf der Ressource *Pouet*
+unter dem Titel *AmigaCS #1* zu finden ist, erhält folgende Kennung: `AmigaCS No.1`
+
+> Wichtig: Es gibt auch Magazine, die zwar unterschiedlich sind, aber unter demselben
+Titel erschienen. Zu diesem Zweck wurden ihre Titel durch eine entsprechende Nummer,
+beginnend mit 1, ergänzt. In diesem Fall ist der "bereinigte" Titel der Ausgabe
+durch diese Nummer in runden Klammern zu vervollständigen (z.B. `Always (2) No.19`).
+
+### 4.3.2 Überprüfung der Angaben zum Herkunftsland und der Sprache des Magazins
+Da die Informationen zur Herkunft und Sprache von dem in der Tabelle 
+[`east_middle_europe_magazines.csv`](../data/target_data/east_middle_europe_magazines.csv)
+aufgelisteten Magazin "geerbt" wurden, soll nun jede einzelne Ausgabe überprüft werden. Dies
+wird ermittelt, in dem die Seite der Ausgabe auf der jeweiligen Ressource aufgerufen und
+manuell untersucht wird. Behilflich sind in diesem Fall die hochgeladenen Screenshots der
+Inhalte, die insbesondere die Informationen über die sprachlichen Besonderheiten der Ausgabe
+liefern können. Für die Ermittlung der geografischen Merkmale werden die Informationen zur
+Herkunft der jeweiligen Herausgebergruppe aufgerufen. Sollten die Angaben im Datensatz und 
+im Internet nicht übereinstimmen, so wird es korrigiert, indem die 
+richtigen Werte eingetragen werden.
+> Bei mehrsprachigen Ausgaben werden alle Sprachen in alphabetischer Reihenfolge eingetragen.
+
+> Sofern für die jeweilige Ausgabe keine Screenshots hochgeladen wurden, 
+wird ein fehlender Wert eingetragen.
+
+> Falls es sich während der Überprüfung dieser Angaben herausstellt, dass der Link zur
+Ausgabe nicht mehr aufgerufen werden kann, so ist es entsprechend zu kennzeichnen.
+
+### 4.3.3 Datumsangaben
+Ursprünglich wurden die Datumsangaben nach deutscher Schreibweise eingetragen. Ist das
+Datum unvollständig, so wurde neben dem Jahr der erste Tag oder Monat als 
+Erscheinungsdatum hinzugefügt.<br>
+Zur Erhöhung der Plausibilität der Daten sollen alle Angaben zum Erscheinungsdatum
+erneut überprüft und nach einem in der Forschung üblichen Standard gespeichert werden.
+Hierfür eignet sich das Format *ISO 8601*. Demnach soll das Datum folgendermaßen
+eingetragen werden: `JJJJ-MM-TT`.<br>
+Falls das Datum unvollständig ist und nur aus dem Jahr oder dem Jahr und dem Monat
+besteht, so werden nur die vorhandenen Informationen eingefügt.
+
+> Beispiel: Es ist bekannt, dass die 25.Ausgabe des Magazins *Always* im September 1995
+erschienen ist. Somit muss folgendes Datum eingetragen werden: `1995-09`.
+
+### 4.3.4 Heimcomputersysteme und -familien
+Die Ressourcen, die als Grundlage für die Zusammenstellung der Quelldatensätze dienen,
+bieten teilweise unterschiedliche Angaben zur Plattform der jeweiligen Magazine.
+Dabei handelt es sich of um dieselben Systeme, die allerdings je nach Ressource
+unterschiedlich genannt werden. Zu diesem Zweck wird im Feld `system_name_standardized`
+der standardisierte Name des Systems eingetragen. Dies erfolgt auf der Grundlage des
+in dem Datensatz [`umbenennung-systeme.csv`](../data/source_data/umbenennung-systeme.csv)
+aufgeführten Mappings.
+
+### 4.3.4 Umgang mit fehlenden Werten
+
+Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
+Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
+gekennzeichnet werden.
+
+### 4.3.5 Ausgaben mit unsicheren Inhalten
+
+Im Hinblick auf die Tatsache, dass das Verfassen und Herausgeben der Diskmags von
+Angehörigen der jeweiligen Communities kaum überprüft wurde, können manche Ausgaben
+sexistische, rassistische und andere Äußerungen oder Bilder enthalten. Für einen sicheren 
+Umgang mit den im Rahmen dieses Projekts zu bearbeitenden Forschungsdaten müssen solche
+Inhalte entsprechend gekennzeichnet werden.<br>
+Als Grundlage für das Kennzeichnen solcher Inhalte eignet sich 
+das *Handbuch zur Erstellung diskriminierungsfreier Metadaten für historische 
+Quellen und Forschungsdaten* (2024) von Moritz Noëlle Schnegg. In Bezug auf die
+Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
+* `Erotik`
+* `Ideologie`
+* `Nationalsozialismus`
+* `Sexismus`
+
+> Es ist wichtig zu betonen, dass in diesem Datensatz keine vollumfängliche Kennzeichnung
+unsicherer Inhalte garantiert werden kann. Vor allem liegt es daran, dass die vorhanden
+Screenshots nur einen kleinen Anteil aller Inhalte repräsentieren, weshalb keine genaue
+Einstufung erfolgen kann.

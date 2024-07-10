@@ -12,7 +12,7 @@ Titel des Forschungsdatensatzes:		Diskettenmagazine im ostmitteleuropäischen Ra
 Ort der Datenerhebung:				Würzburg, Deutschland
 
 Version:					[Versionsangabe; bei Erstveröffentlichung 1.0]
-Versionenänderungen:				[Freitext; Angabe, welche Änderungen zu einer neuen Version geführt haben; bei Erstveröffentlichung kein Eintrag]
+Versionenänderungen:				Bisher keine Versionsveränderungen
 
 ______________________________
 
@@ -32,7 +32,8 @@ Beteiligte 2.Typ				ContactPerson, DataCurator
 
 ______________________________
 
-Projektname:					NFDI4Memory Data Fellowship 2024 am Herder-Institut für historische Ostmitteleuropaforschung, Diskmags-Projekt am Zentrum für Philologie und Digitalität
+Projektname:					NFDI4Memory Data Fellowship 2024 am Herder-Institut für historische Ostmitteleuropaforschung
+						Diskmags-Projekt am Zentrum für Philologie und Digitalität in Würzburg
 
 ______________________________
 
