@@ -150,7 +150,8 @@ Herkunft der jeweiligen Herausgebergruppe aufgerufen. Sollten die Angaben im Dat
 im Internet nicht übereinstimmen, so wird es korrigiert, indem die 
 richtigen Werte eingetragen werden.<br>
 Die Sprachen und Länder werden als Kürzel eingetragen. Dabei orientiert man sich auf die
-Richtlinien des ZDF-Formats. In diesem Sinne wird für eine Sprache ein Kürzel aus 3 Buchstaben
+Richtlinien des [ZDB-Formats](https://zeitschriftendatenbank.de/erschliessung/zdb-format). 
+In diesem Sinne wird für eine Sprache ein Kürzel aus 3 Buchstaben
 verwendet, während für ein Land die Kombination aus 3 Großbuchstaben eingetragen wird. Beispiel:
 ein polnisches Magazin mit polnischsprachigen Inhalten erhält folgende Werte:
 * `PL` für die Identifikation des Herkunftslandes
