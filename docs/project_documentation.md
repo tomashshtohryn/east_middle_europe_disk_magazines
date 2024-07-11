@@ -126,7 +126,7 @@ zu finden und hat folgende Struktur:
 
 
 ## 4.3 Aufbereitung
-### 4.3.1 Zuteilung der vereinheitlichten Titel der Ausgabe
+### 4.3.1 Zuteilung vereinheitlichten Titels einer Ausgabe
 Damit die Ausgabe eindeutig identifizierbar wird, ist es erforderlich, eine eindeutige
 Kennung im Feld `issue_title` zu erstellen. Dies erfolgt anhand des Titels des Magazins
 einschließlich der Nummer der jeweiligen Ausgabe mit dem Präfix *No.*.
@@ -148,7 +148,14 @@ Inhalte, die insbesondere die Informationen über die sprachlichen Besonderheite
 liefern können. Für die Ermittlung der geografischen Merkmale werden die Informationen zur
 Herkunft der jeweiligen Herausgebergruppe aufgerufen. Sollten die Angaben im Datensatz und 
 im Internet nicht übereinstimmen, so wird es korrigiert, indem die 
-richtigen Werte eingetragen werden.
+richtigen Werte eingetragen werden.<br>
+Die Sprachen und Länder werden als Kürzel eingetragen. Dabei orientiert man sich auf die
+Richtlinien des ZDF-Formats. In diesem Sinne wird für eine Sprache ein Kürzel aus 3 Buchstaben
+verwendet, während für ein Land die Kombination aus 3 Großbuchstaben eingetragen wird. Beispiel:
+ein polnisches Magazin mit polnischsprachigen Inhalten erhält folgende Werte:
+* `PL` für die Identifikation des Herkunftslandes
+* `pol` für die Erfassung der sprachlichen Merkmale
+
 > Bei mehrsprachigen Ausgaben werden alle Sprachen in alphabetischer Reihenfolge eingetragen.
 
 > Sofern für die jeweilige Ausgabe keine Screenshots hochgeladen wurden, 
