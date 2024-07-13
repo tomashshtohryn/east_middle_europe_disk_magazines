@@ -1,17 +1,5 @@
 # 1. Einleitung
 
-<!-- hier wäre es vielleicht hilfreich, noch einmal grundlegend das Projekt zu erläutern,  
-also was ist der Gegenstand (was sind Diskmags, was zeichnet sie aus)? Warum sind sie interessant? 
-Was für Daten haben wir? Woher kommen diese? 
-Was soll damit im Rahmen des Projekts passieren 
-(Aufbereitung, Bereinigung etc, also welche Schritte und welche Zielformate: - 
-Einpflegen in Euren Katalog, - Publikation als Forschundatensatz,  
-- Ausloten, ob die Daten in Bibliothekskataloge aufgenommen werden können bzw. 
-Mapping der bestehenden Metadaten auf die Anforderungen von Bibliotheken bzw. von RDA). 
-Die Informationen müssen nicht alle hier in die Einleitung, aber einen Überblick als Einstieg bräuchte es, denke ich. 
-Vielleicht macht es auch mehr Sinn, die project_card.txt in die project_documentation.md zu integrieren? 
-Sonst wird es möglicherweise redundante Informationen geben.-->
-
 Diskettenmagazine, auch bekannt als *Diskmags*, sind elektronische Publikationen multimedialer Natur, deren primärer
 Zweck in der Unterhaltung und Verbreitung des Wissens rund um die ersten Heimpcomputersysteme bestand. Die ersten 
 Diskmags erschienen in frühen 1980er Jahren und waren bis hin zur ersten Dekade des 21. Jahrunderts als eine 
@@ -48,8 +36,8 @@ folgendermaßen zu veröffentlichen sind:
 
 ## 3.1 Ausgaben
 Die Grundlage für die Durchführung des Projekts bilden die Datensätze, die im Laufe
-des bereits abgeschlossenen Diskmags-Projekts mittels der Web-Scraping-Methoden 
-erzeugt wurden. Diese sind im Ordner [`source_data`](../data/source_data) zu finden.<br>
+des bereits abgeschlossenen Diskmags-Projekts mittels der Web-Scraping-Bibliotheken 
+`Selenium` und `Scrapy` erzeugt wurden. Diese sind im Ordner [`source_data`](../data/source_data) zu finden.<br>
 Jeder darin enthaltene Datensatz repräsentiert eine der insgesamt 5 Quellen: [CSDB](https://csdb.dk/), [Demozoo](https://demozoo.org/), [Pouet](https://www.pouet.net/), 
 [Internet Archive](https://archive.org/), [ZXPress](https://zxpress.ru/). Zur Vervollständigung
 des Datenbestands wurde zudem die Enzyklopädie der Diskettenmagazine von Claus-Dieter Volko
@@ -85,7 +73,11 @@ im CSV-Format gespeichert und hat folgende Struktur:
 * Quelle, wo die Ausgaben dieses Magazins zu finden sind
 
 > Zur Vermeidung der Probleme mit dem Auslesen und der Verarbeitung dieses Datensatzes wurde
-im Falle multipler Werte das Semikolon-Zeichen (`;`) als Separator verwendet. 
+im Falle multipler Werte das Semikolon-Zeichen (`;`) als Separator verwendet.
+----
+> Warnung: Manche Magazine, die in diesem Datensatz aufgeführt werden,
+enthalten sensible Inhalte. Weiterführende Informationen zur Kennzeichnung
+solcher Inhalte findet man im Abschnitt [Umgang mit sensiblen Inhalten](#433-kennzeichnung-der-ausgaben-mit-sensiblen-inhalten).
 
 # 4. Methodik
 ## 4.1 Ableitung der Teilmenge aller Magazine aus ostmitteleuropäischem Raum
@@ -165,40 +157,11 @@ wird ein fehlender Wert eingetragen.
 > Falls es sich während der Überprüfung dieser Angaben herausstellt, dass der Link zur
 Ausgabe nicht mehr aufgerufen werden kann, so ist es entsprechend zu kennzeichnen.
 
-### 4.3.3 Datumsangaben
-Ursprünglich wurden die Datumsangaben nach deutscher Schreibweise eingetragen. Ist das
-Datum unvollständig, so wurde neben dem Jahr der erste Tag oder Monat als 
-Erscheinungsdatum hinzugefügt.<br>
-Zur Erhöhung der Plausibilität der Daten sollen alle Angaben zum Erscheinungsdatum
-erneut überprüft und nach einem in der Forschung üblichen Standard gespeichert werden.
-Hierfür eignet sich das Format *ISO 8601*. Demnach soll das Datum folgendermaßen
-eingetragen werden: `JJJJ-MM-TT`.<br>
-Falls das Datum unvollständig ist und nur aus dem Jahr oder dem Jahr und dem Monat
-besteht, so werden nur die vorhandenen Informationen eingefügt.
-
-> Beispiel: Es ist bekannt, dass die 25.Ausgabe des Magazins *Always* im September 1995
-erschienen ist. Somit muss folgendes Datum eingetragen werden: `1995-09`.
-
-### 4.3.4 Heimcomputersysteme und -familien
-Die Ressourcen, die als Grundlage für die Zusammenstellung der Quelldatensätze dienen,
-bieten teilweise unterschiedliche Angaben zur Plattform der jeweiligen Magazine.
-Dabei handelt es sich of um dieselben Systeme, die allerdings je nach Ressource
-unterschiedlich genannt werden. Zu diesem Zweck wird im Feld `system_name_standardized`
-der standardisierte Name des Systems eingetragen. Dies erfolgt auf der Grundlage des
-in dem Datensatz [`umbenennung-systeme.csv`](../data/source_data/umbenennung-systeme.csv)
-aufgeführten Mappings.
-
-### 4.3.4 Umgang mit fehlenden Werten
-
-Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
-Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
-gekennzeichnet werden.
-
-### 4.3.5 Ausgaben mit unsicheren Inhalten
+### 4.3.3 Kennzeichnung der Ausgaben mit sensiblen Inhalten
 
 Im Hinblick auf die Tatsache, dass das Verfassen und Herausgeben der Diskmags von
 Angehörigen der jeweiligen Communities kaum überprüft wurde, können manche Ausgaben
-sexistische, rassistische und andere Äußerungen oder Bilder enthalten. Für einen sicheren 
+sexistische, rassistische und andere sensible Äußerungen oder Bilder enthalten. Für einen sicheren 
 Umgang mit den im Rahmen dieses Projekts zu bearbeitenden Forschungsdaten müssen solche
 Inhalte entsprechend gekennzeichnet werden.<br>
 Als Grundlage für das Kennzeichnen solcher Inhalte eignet sich 
@@ -214,3 +177,32 @@ Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
 unsicherer Inhalte garantiert werden kann. Vor allem liegt es daran, dass die vorhanden
 Screenshots nur einen kleinen Anteil aller Inhalte repräsentieren, weshalb keine genaue
 Einstufung erfolgen kann.
+
+### 4.3.4 Datumsangaben
+Ursprünglich wurden die Datumsangaben nach deutscher Schreibweise eingetragen. Ist das
+Datum unvollständig, so wurde neben dem Jahr der erste Tag oder Monat als 
+Erscheinungsdatum hinzugefügt.<br>
+Zur Erhöhung der Plausibilität der Daten sollen alle Angaben zum Erscheinungsdatum
+erneut überprüft und nach einem in der Forschung üblichen Standard gespeichert werden.
+Hierfür eignet sich das Format *ISO 8601*. Demnach soll das Datum folgendermaßen
+eingetragen werden: `JJJJ-MM-TT`.<br>
+Falls das Datum unvollständig ist und nur aus dem Jahr oder dem Jahr und dem Monat
+besteht, so werden nur die vorhandenen Informationen eingefügt.
+
+> Beispiel: Es ist bekannt, dass die 25.Ausgabe des Magazins *Always* im September 1995
+erschienen ist. Somit muss folgendes Datum eingetragen werden: `1995-09`.
+
+### 4.3.5 Heimcomputersysteme und -familien
+Die Ressourcen, die als Grundlage für die Zusammenstellung der Quelldatensätze dienen,
+bieten teilweise unterschiedliche Angaben zur Plattform der jeweiligen Magazine.
+Dabei handelt es sich of um dieselben Systeme, die allerdings je nach Ressource
+unterschiedlich genannt werden. Zu diesem Zweck wird im Feld `system_name_standardized`
+der standardisierte Name des Systems eingetragen. Dies erfolgt auf der Grundlage des
+in dem Datensatz [`umbenennung-systeme.csv`](../data/source_data/umbenennung-systeme.csv)
+aufgeführten Mappings.
+
+### 4.3.6 Umgang mit fehlenden Werten
+
+Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
+Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
+gekennzeichnet werden.
