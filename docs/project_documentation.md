@@ -166,12 +166,17 @@ Umgang mit den im Rahmen dieses Projekts zu bearbeitenden Forschungsdaten müsse
 Inhalte entsprechend gekennzeichnet werden.<br>
 Als Grundlage für das Kennzeichnen solcher Inhalte eignet sich 
 das *Handbuch zur Erstellung diskriminierungsfreier Metadaten für historische 
-Quellen und Forschungsdaten* (2024) von Moritz Noëlle Schnegg. In Bezug auf die
+Quellen und Forschungsdaten* (2024) von Moritz Mähr und Noëlle Schnegg. In Bezug auf die
 Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
 * `Erotik`
 * `Ideologie`
+* `Körper`
 * `Nationalsozialismus`
 * `Sexismus`
+* `Sucht`
+* `Tier`
+Andere Schlagwörter, die im Handbuch nicht aufgeführt sind:
+* `Anarchismus`
 
 > Es ist wichtig zu betonen, dass in diesem Datensatz keine vollumfängliche Kennzeichnung
 unsicherer Inhalte garantiert werden kann. Vor allem liegt es daran, dass die vorhanden
@@ -206,3 +211,36 @@ aufgeführten Mappings.
 Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
 Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
 gekennzeichnet werden.
+
+# 5. Veröffentlichung des Datensatzes im Diskmags-Katalog
+Die im Laufe des Projekts aufbereiteten Daten sollen zudem in den
+internationalen Katalog der Diskettenmagazine eingespielt werden.
+Hierfür steht die [Extension](https://www.mediawiki.org/wiki/Extension:Data_Transfer) zum Hochladen von
+Datensätzen im CSV-Format zur Verfügung.
+
+Dem Datenmodell des Diskmags-Katalogs liegen folgende Entitäten
+zugrunde:
+* Magazin (`Magazine`): enthält die Informationen über das Magazin
+* Ausgabe (`Issue`): enthält die Informationen über eine konkrete Ausgabe
+
+In dieser Hinsicht ist es erforderlich, die Datensätze der Magazine
+und Ausgaben einem zusätzlichen Aufbereitungsschritt zu unterziehen:
+1. Entsprechende Benennung der Spalten nach dem in der Wiki-Instanz definierten Schema
+2. Zusammenführung der wiederholenden Zeilen im Datensatz `east_middle_europe_magazines_issues.csv`.
+Dabei werden alle Zeilen überprüft, indem man die Einträge findet,
+die zwar eine Ausgabe repräsentieren, aber aus unterschiedlichen Quellen
+stammen und zum Teil unterschiedliche Angaben enthalten. Da das Mediawiki
+die Erstellung der Seiten mit selben Titeln nicht zulässt, ist die Zusammenführung
+dieser Einträge ein wichtiger Schritt.
+
+Das Ergebnis dieses Schritts sind folgende Datensätze, die speziell
+für das MediaWiki-Projekt aufbereitet wurden:
+* [`mw_import_east_middle_europe_magazines.csv`](../data/target_data/mw_import_east_middle_europe_magazines.csv):
+Für die Erstellung der Seiten von jeweiligen Magazinen
+* [`mw_import_east_middle_europe_magazines_issues.csv`](../data/target_data/mw_import_east_middle_europe_magazines_issues.csv):
+Für die Erstellung der Seiten einzelner Ausgaben
+
+Diese sind nach UTF-16-Standard kodiert. Zunächst wird jeder Datensatz hochgeladen,
+indem für jeden Eintrag eine separate Seite erzeugt wird. Sobald der Prozess abgeschlossen ist,
+wird anhand einer speziellen Abfrage eine [Übersicht](https://diskmags.de/index.php?title=East-Central_Europe) erstellt, in der die Auflistung all dieser Magazine
+samt einzelner Ausgaben aufgerufen werden kann.

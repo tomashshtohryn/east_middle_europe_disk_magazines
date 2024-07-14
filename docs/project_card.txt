@@ -2,7 +2,7 @@ Readme zur Dokumentation von Forschungsdatensätzen
 
 Ersteller*in Readme:				Shtohryn, Tomash
 
-Erstellungsdatum Readme:			2024-07-
+Erstellungsdatum Readme:			2024-07-15
 ______________________________
 
 Titel des Forschungsdatensatzes:		Diskettenmagazine im ostmitteleuropäischen Raum
@@ -11,7 +11,7 @@ Titel des Forschungsdatensatzes:		Diskettenmagazine im ostmitteleuropäischen Ra
 
 Ort der Datenerhebung:				Würzburg, Deutschland
 
-Version:					[Versionsangabe; bei Erstveröffentlichung 1.0]
+Version:					1.0
 Versionenänderungen:				Bisher keine Versionsveränderungen
 
 ______________________________
@@ -37,22 +37,30 @@ Projektname:					NFDI4Memory Data Fellowship 2024 am Herder-Institut für histor
 
 ______________________________
 
-Abstract:					[Freitext zur Beschreibung der Forschungsdaten (z.B. Inhalt, verwendete Methodik, Entstehungskontext der Daten, 
-						Zusammenstellung und Struktur der Daten, Aufbau von Tabellen, Benennung von Spaltenbezeichnungen, verwendete Abkürzung/Kennzeichen, etc.)]
+Abstract:					Mit diesem Projekt wird das Ziel verfolgt, eine anschlussfähige Datengrundlage für die
+						Erforschung der aus dem ostmitteleuropäischem Raum stammenden Diskettenmagazinen bereitzustellen.
+						Diese digitalen Zeitschriften auf Diskette sind wichtige Artefakte der frühen digitalen Kultur und
+						können daher neue Einblicke in diese Periode eröffnen.
+						Als Forschungsdaten fungieren die Datensätze im CSV-Format, die im Rahmen des bereits abgeschlossenen
+						Forschungsprojekts zur Erschließung und Katalogisierung der Diskettenmagazine erhoben wurden. Das Ziel
+						ist es, diese Metadaten zu bereinigen und aufzubereiten, damit diese sinnvoll weiterverwendet werden 							können.			
 
-						Bei mehreren Dateien zu einem Forschungsdatensatz: Beschreibung, wie diese zueinander im Verhältnis stehen,
-						z.B. dass eine Karte auf der Grundlage eines Geodaten-Pakets erstellt wurde.
+Schlagwörter:					Diskette, Magazin, Kulturerbe, Ostmitteleuropaforschung
 
-Schlagwörter:					Diskettenmagazin, Heimcomputersysteme, Digitales Kulturerbe, Ostmitteleuropa
-
-Methode der Datenerhebung: 			Web Scraping mit anschließender Aufbereitung und Bereinigung mittels semi-automatisierter Verfahren
-
-______________________________
-
-Dateiliste:					[Angabe und Erläuterung von Dateinamen und Ordnerstruktur]
-
-Dateiformate: 					.csv, .md, .txt
+Methode der Datenerhebung: 			Aufbereitung und Bereinigung vorhandener Forschungsdaten mittels semi-automatisierter Verfahren
 
 ______________________________
 
-Anmerkungen: 					[Freitext, z.B. Danksagung, Forschungszusammenhang]
+Dateiliste:					Die Datensätze befinden sich im Ordner ../data.
+                                                Quelldatensätze: ../data/source_data
+                                                Aufbereitete Datensätze: ../data/target_data
+						Code: ../utils
+
+Dateiformate: 					.csv, .md, .txt, .ipynb
+
+______________________________
+
+Anmerkungen: 					Die in diesem Projekt aufbereiteten Metadaten verweisen zum Teil auf sensible Inhalte.
+						Weiterführende Informationen zur verwendeten Methodik können in der Dokumentation entnommen werden.
+
+Lizenz:						CC BY 4.0
