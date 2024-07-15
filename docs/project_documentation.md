@@ -101,24 +101,46 @@ indem alle 5 Datensätze mit Metadaten zu jeweiligen Ausgaben zusammengeführt w
 unter dem Namen [`east_middle_europe_magazines_issues.csv`](../data/target_data/east_middle_europe_magazines_issues.csv)
 zu finden und hat folgende Struktur:
 
-| Feld                       | Beschreibung                                   | Datentyp |
-|----------------------------|------------------------------------------------|----------|
-| `issue_title`              | Der "vereinheitlichte Titel" der Ausgabe       | `str`    |
-| `orig_issue_title`         | Der ursprüngliche Titel der Ausgabe            | `str`    |
-| `magazine_title`           | Der Titel des Magazins                         | `str`    |
-| `origin`                   | Das Land                                       | `str`    |
-| `language`                 | Sprache(n)                                     | `str`    |
-| `release_date`             | Erscheinungsdatum (`TT.MM.JJJJ`)               | `str`    |
-| `system_name_standardized` | Standardisierter Name des Heimcomputersystems  | `str`    |
-| `system_name`              | Ursprünglicher Name des Heimcomputersystems    | `str`    |
-| `editor`                   | Der Name bzw. die Namen der Herausgebergruppen | `str`    |
-| `source`                   | Die Quelle                                     | `str`    |
-| `link`                     | Der Link zur Ausgabe                           | `str`    |
-| `disclaimer`               | Anmerkung zum Inhalt des Magazins              | `str`    |
+| Feld                       | Beschreibung                                     | Datentyp |
+|----------------------------|--------------------------------------------------|----------|
+| `issue_title`              | Der "vereinheitlichte Titel" der Ausgabe         | `str`    |
+| `issue_title_original`     | Der ursprüngliche Titel der Ausgabe              | `str`    |
+| `magazine_title`           | Der Titel des Magazins                           | `str`    |
+| `origin`                   | Das Land                                         | `str`    |
+| `language`                 | Die Sprache(n)                                   | `str`    |
+| `release_date`             | Erscheinungsdatum (`TT.MM.JJJJ`)                 | `str`    |
+| `system_name_standardized` | Standardisierter Name des Heimcomputersystems    | `str`    |
+| `system_name`              | Ursprünglicher Name des Heimcomputersystems      | `str`    |
+| `editor`                   | Der Name bzw. die Namen der Herausgebergruppen   | `str`    |
+| `source`                   | Die Quelle                                       | `str`    |
+| `source_link`              | Der Link zur Ausgabe                             | `str`    |
+| `diskmags_catalogue_link`  | Der Link zur Ausgabe im Diskmags-Katalog         | `str`    |
+| `disclaimer`               | Anmerkung zum Inhalt des Magazins                | `str`    |
 
+## 4.3 Erstellung des Datensatzes aller Magazine
 
-## 4.3 Aufbereitung
-### 4.3.1 Zuteilung vereinheitlichten Titels einer Ausgabe
+Zeitgleich wird der Datensatz aller Magazine aufbereitet. Die einzelnen Felder sollen folgendermaßen 
+benannt werden:
+
+| Feld                      | Beschreibung                                          | Datentyp |
+|---------------------------|-------------------------------------------------------|----------|
+| `magazine_title`          | Der "vereinheitlichte Titel" des Magazins             | `str`    |
+| `aka`                     | Auch bekannt als                                      | `str`    |
+| `language`                | Die Sprache(n)                                        | `str`    |
+| `origin`                  | Das Land                                              | `str`    |
+| `first_publication_date`  | Das Erscheinungsdatum der ersten (bekannten) Ausgabe  | `str`    |
+| `last_publication_date`   | Das Erscheinungsdatum der letzten (bekannten) Ausgabe | `str`    |
+| `system`                  | Der Name des Heimcomputersystems                      | `str`    |
+| `source`                  | Die Quelle(n)                                         | `str`    |
+| `editor`                  | Der Name bzw. die Namen der Herausgebergruppen        | `str`    |
+| `diskmags_catalogue_link` | Der Link zum Magazin im Diskmags-Katalog              | `str`    |
+
+## 4.4 Aufbereitung
+
+Beide Datensätze müssen entsprechend aufbereitet und bereinigt werden. Im Folgenden werden
+die einzelnen Arbeitsschritte aufgeführt.
+
+### 4.4.1 Zuteilung vereinheitlichten Titels einer Ausgabe
 Damit die Ausgabe eindeutig identifizierbar wird, ist es erforderlich, eine eindeutige
 Kennung im Feld `issue_title` zu erstellen. Dies erfolgt anhand des Titels des Magazins
 einschließlich der Nummer der jeweiligen Ausgabe mit dem Präfix *No.*.
@@ -130,7 +152,7 @@ Titel erschienen. Zu diesem Zweck wurden ihre Titel durch eine entsprechende Num
 beginnend mit 1, ergänzt. In diesem Fall ist der "bereinigte" Titel der Ausgabe
 durch diese Nummer in runden Klammern zu vervollständigen (z.B. `Always (2) No.19`).
 
-### 4.3.2 Überprüfung der Angaben zum Herkunftsland und der Sprache des Magazins
+### 4.4.2 Überprüfung der Angaben zum Herkunftsland und der Sprache des Magazins
 Da die Informationen zur Herkunft und Sprache von dem in der Tabelle 
 [`east_middle_europe_magazines.csv`](../data/target_data/east_middle_europe_magazines.csv)
 aufgelisteten Magazin "geerbt" wurden, wird jede einzelne Ausgabe überprüft. Dies
@@ -157,7 +179,7 @@ wird ein fehlender Wert eingetragen.
 > Falls sich während der Überprüfung dieser Angaben herausstellt, dass der Link zur
 Ausgabe nicht mehr aufgerufen werden kann, so ist es entsprechend zu kennzeichnen.
 
-### 4.3.3 Kennzeichnung der Ausgaben mit sensiblen Inhalten
+### 4.4.3 Kennzeichnung der Ausgaben mit sensiblen Inhalten
 Im Hinblick auf die Tatsache, dass das Verfassen und Herausgeben der Diskmags von
 Angehörigen der jeweiligen Communities kaum überprüft wurde, können manche Ausgaben
 sexistische, rassistische und andere sensible Äußerungen oder Bilder enthalten. Für einen sicheren 
@@ -165,7 +187,7 @@ Umgang mit den im Rahmen dieses Projekts zu bearbeitenden Forschungsdaten müsse
 Inhalte entsprechend gekennzeichnet werden.<br>
 Als Grundlage für das Kennzeichnen solcher Inhalte eignet sich 
 das  [*Handbuch zur Erstellung diskriminierungsfreier Metadaten für historische 
-Quellen und Forschungsdaten* (2024[)]()](https://maehr.github.io/diskriminierungsfreie-metadaten/) von Moritz Mähr und Noëlle Schnegg. In Bezug auf die
+Quellen und Forschungsdaten* (2024)](https://maehr.github.io/diskriminierungsfreie-metadaten/) von Moritz Mähr und Noëlle Schnegg. In Bezug auf die
 Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
 * `Erotik`
 * `Ideologie`
@@ -173,7 +195,7 @@ Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
 * `Nationalsozialismus`
 * `Sexismus`
 * `Sucht`
-* `Tier`
+
 Andere Schlagwörter, die im Handbuch nicht aufgeführt sind:
 * `Anarchismus`
 
@@ -182,7 +204,7 @@ unsicherer Inhalte garantiert werden kann. Vor allem liegt es daran, dass die vo
 Screenshots nur einen kleinen Anteil aller Inhalte repräsentieren, weshalb keine genaue
 Einstufung erfolgen kann.
 
-### 4.3.4 Datumsangaben
+### 4.4.4 Datumsangaben
 Ursprünglich wurden die Datumsangaben nach deutscher Schreibweise eingetragen. Ist das
 Datum unvollständig, so wurde neben dem Jahr der erste Tag oder Monat als 
 Erscheinungsdatum hinzugefügt.<br>
@@ -196,7 +218,7 @@ besteht, so werden nur die vorhandenen Informationen eingefügt.
 > Beispiel: Es ist bekannt, dass die 25.Ausgabe des Magazins *Always* im September 1995
 erschienen ist. Somit muss folgendes Datum eingetragen werden: `1995-09`.
 
-### 4.3.5 Heimcomputersysteme und -familien
+### 4.4.5 Heimcomputersysteme und -familien
 Die Ressourcen, die als Grundlage für die Zusammenstellung der Quelldatensätze dienen,
 bieten teilweise unterschiedliche Angaben zur Plattform der jeweiligen Magazine.
 Dabei handelt es sich of um dieselben Systeme, die allerdings je nach Ressource
@@ -205,7 +227,7 @@ der standardisierte Name des Systems eingetragen. Dies erfolgt auf der Grundlage
 in dem Datensatz [`umbenennung-systeme.csv`](../data/source_data/umbenennung-systeme.csv)
 aufgeführten Mappings.
 
-### 4.3.6 Umgang mit fehlenden Werten
+### 4.4.6 Umgang mit fehlenden Werten
 Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
 Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
 gekennzeichnet werden.
