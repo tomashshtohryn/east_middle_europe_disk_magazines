@@ -1,16 +1,16 @@
 # 1. Einleitung
 
 Diskettenmagazine, auch bekannt als *Diskmags*, sind elektronische Publikationen multimedialer Natur, deren primärer
-Zweck in der Unterhaltung und Verbreitung des Wissens rund um die ersten Heimpcomputersysteme bestand. Die ersten 
-Diskmags erschienen in frühen 1980er Jahren und waren bis hin zur ersten Dekade des 21. Jahrunderts als eine 
+Zweck in der Unterhaltung und Verbreitung des Wissens rund um die ersten Heimcomputersysteme bestand. Die ersten 
+Diskmags erschienen in den frühen 1980er Jahren und waren bis hin zur ersten Dekade des 21. Jahrunderts als eine 
 alternative Form der damals üblichen Periodika besonders beliebt.<br>
 Aufgrund ihrer Bauweise waren die Disketten nicht besonders langlebig. Demzufolge griffen ihre Verfasser oder 
-Enthusiasten oft auf die Werkzeuge zur Übertragung der Inhalte von Diskmags in ein virtuelles Format, um so die
+Enthusiasten oft auf Werkzeuge zur Übertragung der Inhalte von Diskmags in ein virtuelles Format zurück, um so die
 Verfügbarkeit dieser Journale aufrechtzuerhalten. Derzeit sind die bekanntesten Reihen auf zahlreichen Ressourcen als
 digitale Abbilder zu finden. Diese lassen sich innerhalb einer dafür geeigneten Softwareumgebung emulieren.<br>
 Die Diskmags lassen sich zweifelsohne als Artefakte der damaligen digitalen Kultur betrachten. Deren Inhalte reichen von
 Artikeln rund um das Programmieren und die kreative Tätigkeit der Demoszene bis hin zu Dienstprogrammen und zahlreichen
-Spielen. Demzufolge ist ihre Erforschung ein wichtiger Schritt, um das kulturelle Erbe dieser Art erhalten 
+Spielen. Demzufolge ist ihre Erforschung ein wichtiger Schritt, um das kulturelle Erbe dieser Kultur und ihrer Medien erhalten 
 zu können.<br>
 
 # 2. Ziel des Projekts
@@ -28,7 +28,7 @@ zum ostmitteleuropäischen Raum gehören.<br>
 Damit die Qualität dieser (Forschungs-)Daten sichergestellt wird, erfolgt die Bearbeitung des Datensatzes unter der Betreuung
 von FDM-Expert:Innen vom Herder-Institut für historische Ostmitteleuropaforschung in Marburg.
 Das Ergebnis des Vorhabens sind die Datensätze im CSV-Format, die nach der Aufbereitung 
-folgendermaßen zu veröffentlichen sind:
+folgendermaßen veröffentlicht wurden:
 1. Publikation des Datensatzes im internationalen Katalog der Diskettenmagazine
 2. Veröffentlichung in einem geeigneten Repositorium
 
@@ -63,8 +63,8 @@ Einen Überblick über alle Magazine bietet der Datensatz
 im CSV-Format gespeichert und hat folgende Struktur:
 * Titel des Magazins (abgeleitet aus den Titeln zugehöriger Ausgaben)
 * Alternative Titel (*AKA*)
-* Sprache des Magazins (ermittelt infolge der stichprobenartigen Recherchen)
-* Land (ermittelt infolge der stichprobenartigen Recherchen)
+* Sprache des Magazins (ermittelt infolge stichprobenartiger Recherche)
+* Land (ermittelt infolge stichprobenartiger Recherche)
 * Datum der ersten Ausgabe
 * Datum der letzten Ausgabe
 * Kompatibles Heimcomputersystem
@@ -82,10 +82,10 @@ solcher Inhalte findet man im Abschnitt [Umgang mit sensiblen Inhalten](#433-ken
 # 4. Methodik
 ## 4.1 Ableitung der Teilmenge aller Magazine aus ostmitteleuropäischem Raum
 Mithilfe der Angaben, die der Datensatz [`mw_import_magazines.csv`](../data/source_data/mw_import_magazines.csv)
-liefert, sollen alle Magazine ausgewählt, die sowohl aus dem Kerngebiet Osteuropas stammen
-als auch aus den Ländern, die zu dieser Region nur gelegentlich zählen.
+liefert, sollen alle Magazine ausgewählt werden, die sowohl aus dem Kerngebiet Osteuropas stammen
+als auch aus den Ländern, die nur gelegentlich zu dieser Region zählen.
 * **Schritt 1:** Auswahl der Magazine nach Land (Feld `Origin`)
-* **Schritt 2:** Sofern es keine Angaben zu Herkunftsland der Zeitschrift gibt, erfolgt
+* **Schritt 2:** Sofern es keine Angaben zum Herkunftsland der Zeitschrift gibt, erfolgt
 die Auswahl nach der Sprache jedes ostmitteleuropäischen Landes. (Feld `Language`)<br>
 > Es ist zu beachten, dass diese Magazine zum Teil mehrsprachig sind.
 
@@ -110,7 +110,7 @@ zu finden und hat folgende Struktur:
 | `language`                 | Sprache(n)                                     | `str`    |
 | `release_date`             | Erscheinungsdatum (`TT.MM.JJJJ`)               | `str`    |
 | `system_name_standardized` | Standardisierter Name des Heimcomputersystems  | `str`    |
-| `system_name`              | Ursprünglicher Name des Heimcomputers          | `str`    |
+| `system_name`              | Ursprünglicher Name des Heimcomputersystems    | `str`    |
 | `editor`                   | Der Name bzw. die Namen der Herausgebergruppen | `str`    |
 | `source`                   | Die Quelle                                     | `str`    |
 | `link`                     | Der Link zur Ausgabe                           | `str`    |
@@ -133,7 +133,7 @@ durch diese Nummer in runden Klammern zu vervollständigen (z.B. `Always (2) No.
 ### 4.3.2 Überprüfung der Angaben zum Herkunftsland und der Sprache des Magazins
 Da die Informationen zur Herkunft und Sprache von dem in der Tabelle 
 [`east_middle_europe_magazines.csv`](../data/target_data/east_middle_europe_magazines.csv)
-aufgelisteten Magazin "geerbt" wurden, soll nun jede einzelne Ausgabe überprüft werden. Dies
+aufgelisteten Magazin "geerbt" wurden, wird jede einzelne Ausgabe überprüft. Dies
 wird ermittelt, in dem die Seite der Ausgabe auf der jeweiligen Ressource aufgerufen und
 manuell untersucht wird. Behilflich sind in diesem Fall die hochgeladenen Screenshots der
 Inhalte, die insbesondere die Informationen über die sprachlichen Besonderheiten der Ausgabe
@@ -141,7 +141,7 @@ liefern können. Für die Ermittlung der geografischen Merkmale werden die Infor
 Herkunft der jeweiligen Herausgebergruppe aufgerufen. Sollten die Angaben im Datensatz und 
 im Internet nicht übereinstimmen, so wird es korrigiert, indem die 
 richtigen Werte eingetragen werden.<br>
-Die Sprachen und Länder werden als Kürzel eingetragen. Dabei orientiert man sich auf die
+Die Sprachen und Länder werden als Kürzel eingetragen. Dabei orientiert man sich an den
 Richtlinien des [ZDB-Formats](https://zeitschriftendatenbank.de/erschliessung/zdb-format). 
 In diesem Sinne wird für eine Sprache ein Kürzel aus 3 Buchstaben
 verwendet, während für ein Land die Kombination aus 3 Großbuchstaben eingetragen wird. Beispiel:
@@ -154,19 +154,18 @@ ein polnisches Magazin mit polnischsprachigen Inhalten erhält folgende Werte:
 > Sofern für die jeweilige Ausgabe keine Screenshots hochgeladen wurden, 
 wird ein fehlender Wert eingetragen.
 
-> Falls es sich während der Überprüfung dieser Angaben herausstellt, dass der Link zur
+> Falls sich während der Überprüfung dieser Angaben herausstellt, dass der Link zur
 Ausgabe nicht mehr aufgerufen werden kann, so ist es entsprechend zu kennzeichnen.
 
 ### 4.3.3 Kennzeichnung der Ausgaben mit sensiblen Inhalten
-
 Im Hinblick auf die Tatsache, dass das Verfassen und Herausgeben der Diskmags von
 Angehörigen der jeweiligen Communities kaum überprüft wurde, können manche Ausgaben
 sexistische, rassistische und andere sensible Äußerungen oder Bilder enthalten. Für einen sicheren 
 Umgang mit den im Rahmen dieses Projekts zu bearbeitenden Forschungsdaten müssen solche
 Inhalte entsprechend gekennzeichnet werden.<br>
 Als Grundlage für das Kennzeichnen solcher Inhalte eignet sich 
-das *Handbuch zur Erstellung diskriminierungsfreier Metadaten für historische 
-Quellen und Forschungsdaten* (2024) von Moritz Mähr und Noëlle Schnegg. In Bezug auf die
+das  [*Handbuch zur Erstellung diskriminierungsfreier Metadaten für historische 
+Quellen und Forschungsdaten* (2024[)]()](https://maehr.github.io/diskriminierungsfreie-metadaten/) von Moritz Mähr und Noëlle Schnegg. In Bezug auf die
 Thematik solcher Inhalte lassen sich folgende Vermerke in Betracht ziehen:
 * `Erotik`
 * `Ideologie`
@@ -207,7 +206,6 @@ in dem Datensatz [`umbenennung-systeme.csv`](../data/source_data/umbenennung-sys
 aufgeführten Mappings.
 
 ### 4.3.6 Umgang mit fehlenden Werten
-
 Alle Zellen, die keine Werte enthalten, sind als fehlende Werte zu bezeichnen. Um die
 Nachvollziehbarkeit der Daten aufrechtzuerhalten, sollen diese durch einen Punkt (`.`)
 gekennzeichnet werden.
